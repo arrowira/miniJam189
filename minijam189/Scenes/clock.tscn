@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c12x7pfthy2tx" path="res://sprites/clock-1.png.png" id="1_vav08"]
 [ext_resource type="Texture2D" uid="uid://xtel24lbx530" path="res://sprites/bigClockHand-1.png.png" id="2_4w3bt"]
-[ext_resource type="Script" path="res://Scenes/clockMovement.gd" id="3_0b6dg"]
+[ext_resource type="Script" path="res://Scripts/clockMovement.gd" id="3_0b6dg"]
 [ext_resource type="Texture2D" uid="uid://cknpkl1nwirt" path="res://sprites/littleClockHand-1.png.png" id="4_sxq22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvik4"]

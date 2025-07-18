@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://r10kfgnss2h0"]
 
-[ext_resource type="Script" path="res://Scenes/plaayerMovement.gd" id="1_0yxif"]
+[ext_resource type="Script" path="res://Scripts/plaayerMovement.gd" id="1_0yxif"]
 [ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
 [ext_resource type="Texture2D" uid="uid://bxutoko141rn8" path="res://sprites/shadow-1.png.png" id="2_sk2sv"]
-[ext_resource type="Script" path="res://Scenes/PlayerInventory.gd" id="4_keevx"]
+[ext_resource type="Script" path="res://Scripts/PlayerInventory.gd" id="4_keevx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gjh"]
 size = Vector2(123, 172)
@@ -104,39 +104,39 @@ _data = {
 
 [node name="player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_0yxif")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="Player"]
 modulate = Color(1, 1, 1, 0.305882)
 position = Vector2(0, 127)
 texture = ExtResource("2_sk2sv")
 
-[node name="FeetCollider" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="FeetCollider" type="CollisionShape2D" parent="Player"]
 position = Vector2(-7.5, 144)
 shape = SubResource("RectangleShape2D_a4gjh")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(-1, 0)
 scale = Vector2(0.882813, 0.831514)
 texture = ExtResource("2_6x4l0")
 
-[node name="jumpTimer" type="Timer" parent="CharacterBody2D"]
+[node name="jumpTimer" type="Timer" parent="Player"]
 wait_time = 0.4
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 
-[node name="anim" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="anim" type="AnimationPlayer" parent="Player"]
 libraries = {
 "": SubResource("AnimationLibrary_xbr2r")
 }
 
-[node name="InventoryManager" type="Node" parent="CharacterBody2D"]
+[node name="InventoryManager" type="Node" parent="Player"]
 script = ExtResource("4_keevx")
 
-[connection signal="timeout" from="CharacterBody2D/jumpTimer" to="CharacterBody2D" method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="Player/jumpTimer" to="Player" method="_on_jump_timer_timeout"]

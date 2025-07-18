@@ -1,23 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://p5sgoheg6jxg"]
 
-[ext_resource type="Script" path="res://Scenes/PickupObj.gd" id="1_ykwq8"]
 [ext_resource type="Texture2D" uid="uid://bi1y4m4hh5p2r" path="res://sprites/Eyeball.png" id="2_8g481"]
+[ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="2_atluv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aob3g"]
-size = Vector2(81, 81)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
+size = Vector2(8, 8)
 
 [node name="Eyeball" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Eye" type="Area2D" parent="."]
+scale = Vector2(10, 10)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_ykwq8")
+script = ExtResource("2_atluv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.500003, 0.500002)
-shape = SubResource("RectangleShape2D_aob3g")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eye"]
+position = Vector2(0, 1.90735e-07)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_s2j77")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Eye"]
 texture_filter = 1
-scale = Vector2(10, 10)
+scale = Vector2(1, 1)
 texture = ExtResource("2_8g481")
+
+[connection signal="body_entered" from="Eye" to="Eye" method="_on_body_entered"]
