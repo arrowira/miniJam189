@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj14p0oiemypa"]
+
+[ext_resource type="Script" path="res://plaayerMovement.gd" id="1_0yxif"]
+[ext_resource type="Texture2D" uid="uid://blcoi2du334ue" path="res://icon.svg" id="2_ugyvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gjh"]
+
+[node name="player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0yxif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_a4gjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-0.500003, -0.5)
+scale = Vector2(0.882813, 0.960937)
+texture = ExtResource("2_ugyvi")
+
+[node name="jumpTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="CharacterBody2D/jumpTimer" to="CharacterBody2D" method="_on_jump_timer_timeout"]
