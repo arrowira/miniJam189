@@ -1,3 +1,9 @@
-[gd_scene load_steps=0 format=3 uid="uid://c2kioto6ko64t"]
+[gd_scene load_steps=2 format=3 uid="uid://c2kioto6ko64t"]
+
+[ext_resource type="PackedScene" uid="uid://budb0yq8634uc" path="res://clock.tscn" id="1_cu0o8"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_cu0o8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
