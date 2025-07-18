@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh5gwa1vkhg2n"]
+[gd_scene load_steps=5 format=3 uid="uid://budb0yq8634uc"]
 
 [ext_resource type="Texture2D" uid="uid://c12x7pfthy2tx" path="res://sprites/clock-1.png.png" id="1_vav08"]
 [ext_resource type="Texture2D" uid="uid://xtel24lbx530" path="res://sprites/bigClockHand-1.png.png" id="2_4w3bt"]
