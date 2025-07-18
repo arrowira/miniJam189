@@ -8,6 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 func ParseItem(Id):
@@ -20,6 +21,15 @@ func ParseItem(Id):
 		"Heart":
 			ItemID = 2
 			Texture = "res://sprites/WashingMachineHeart.png"
+		"Lump":
+			ItemID = 3
+			Texture = "res://sprites/StrangeLump.png"
+		"Candy":
+			ItemID = 4
+			Texture = "res://sprites/CandyCorn.png"
+		"Void":
+			ItemID = 4
+			Texture = "res://sprites/VoidEssence.png"
 	var sprite = Sprite2D.new()
 	sprite.texture = load(Texture)
 	sprite.scale.x = 10

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://504ougi0joh2"]
+
+[ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="1_p33cs"]
+[ext_resource type="Texture2D" uid="uid://clp7b6rg1fo50" path="res://sprites/VoidEssence.png" id="2_6s5qy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
+size = Vector2(8, 8)
+
+[node name="VoidEssence" type="Node2D"]
+
+[node name="Void" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_p33cs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Void"]
+position = Vector2(0, 1.90735e-07)
+shape = SubResource("RectangleShape2D_s2j77")
+
+[node name="Sprite2D" type="Sprite2D" parent="Void"]
+texture_filter = 1
+texture = ExtResource("2_6s5qy")
+
+[connection signal="body_entered" from="Void" to="Void" method="_on_body_entered"]

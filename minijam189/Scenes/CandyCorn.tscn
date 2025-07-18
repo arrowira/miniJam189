@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://lelq6qmcrqnw"]
+
+[ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="1_g1ghu"]
+[ext_resource type="Texture2D" uid="uid://2dxpy2ro2uce" path="res://sprites/CandyCorn.png" id="2_aj8fx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
+size = Vector2(8, 8)
+
+[node name="CandyCorn" type="Node2D"]
+
+[node name="Candy" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_g1ghu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Candy"]
+position = Vector2(0, 1.90735e-07)
+shape = SubResource("RectangleShape2D_s2j77")
+
+[node name="Sprite2D" type="Sprite2D" parent="Candy"]
+texture_filter = 1
+texture = ExtResource("2_aj8fx")
+
+[connection signal="body_entered" from="Candy" to="Candy" method="_on_body_entered"]
