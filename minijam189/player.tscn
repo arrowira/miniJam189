@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bxutoko141rn8" path="res://sprites/shadow-1.png.png" id="2_sk2sv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gjh"]
+size = Vector2(123, 362)
 
 [sub_resource type="Animation" id="Animation_1bbbk"]
 length = 0.001
@@ -111,6 +112,7 @@ position = Vector2(0, 127)
 texture = ExtResource("2_sk2sv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-7.5, 49)
 shape = SubResource("RectangleShape2D_a4gjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
