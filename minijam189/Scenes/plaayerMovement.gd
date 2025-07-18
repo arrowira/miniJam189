@@ -6,7 +6,6 @@ const JUMP_VELOCITY = -400.0
 var jumping = false
 var input_direction = Vector2.ZERO
 func _physics_process(delta: float) -> void:
-	
 	if velocity.x<0:
 		$Sprite2D.flip_h = true
 	else:

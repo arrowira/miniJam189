@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://r10kfgnss2h0"]
+[gd_scene load_steps=11 format=3 uid="uid://r10kfgnss2h0"]
 
-[ext_resource type="Script" path="res://plaayerMovement.gd" id="1_0yxif"]
+[ext_resource type="Script" path="res://Scenes/plaayerMovement.gd" id="1_0yxif"]
 [ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
 [ext_resource type="Texture2D" uid="uid://bxutoko141rn8" path="res://sprites/shadow-1.png.png" id="2_sk2sv"]
+[ext_resource type="Script" path="res://Scenes/PlayerInventory.gd" id="4_keevx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gjh"]
 size = Vector2(123, 172)
@@ -132,5 +133,8 @@ position_smoothing_enabled = true
 libraries = {
 "": SubResource("AnimationLibrary_xbr2r")
 }
+
+[node name="InventoryManager" type="Node" parent="CharacterBody2D"]
+script = ExtResource("4_keevx")
 
 [connection signal="timeout" from="CharacterBody2D/jumpTimer" to="CharacterBody2D" method="_on_jump_timer_timeout"]

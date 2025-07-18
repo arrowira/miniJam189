@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://p5sgoheg6jxg"]
+
+[ext_resource type="Script" path="res://Scenes/PickupObj.gd" id="1_ykwq8"]
+[ext_resource type="Texture2D" uid="uid://bi1y4m4hh5p2r" path="res://sprites/Eyeball.png" id="2_8g481"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aob3g"]
+size = Vector2(81, 81)
+
+[node name="Eyeball" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1, 1)
+script = ExtResource("1_ykwq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.500003, 0.500002)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_aob3g")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(10, 10)
+texture = ExtResource("2_8g481")
