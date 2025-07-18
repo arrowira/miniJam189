@@ -1,9 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj14p0oiemypa"]
+[gd_scene load_steps=8 format=3 uid="uid://bj14p0oiemypa"]
 
 [ext_resource type="Script" path="res://plaayerMovement.gd" id="1_0yxif"]
-[ext_resource type="Texture2D" uid="uid://blcoi2du334ue" path="res://icon.svg" id="2_ugyvi"]
+[ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gjh"]
+
+[sub_resource type="Animation" id="Animation_du7r7"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.326377, -0.326377, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1bbbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nwmyq"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbr2r"]
+_data = {
+"RESET": SubResource("Animation_1bbbk"),
+"idle": SubResource("Animation_nwmyq"),
+"walk": SubResource("Animation_du7r7")
+}
 
 [node name="player" type="Node2D"]
 
@@ -14,12 +68,21 @@ script = ExtResource("1_0yxif")
 shape = SubResource("RectangleShape2D_a4gjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-0.500003, -0.5)
-scale = Vector2(0.882813, 0.960937)
-texture = ExtResource("2_ugyvi")
+position = Vector2(-1, 0)
+scale = Vector2(0.882813, 0.831514)
+texture = ExtResource("2_6x4l0")
 
 [node name="jumpTimer" type="Timer" parent="CharacterBody2D"]
-wait_time = 0.2
+wait_time = 0.3
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.3, 0.3)
+position_smoothing_enabled = true
+
+[node name="anim" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_xbr2r")
+}
 
 [connection signal="timeout" from="CharacterBody2D/jumpTimer" to="CharacterBody2D" method="_on_jump_timer_timeout"]

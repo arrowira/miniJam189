@@ -9,7 +9,10 @@ func _physics_process(delta: float) -> void:
 	
 	
 	velocity = input_direction * SPEED
-
+	if velocity.length() > 0.1:
+		$anim.play("walk")
+	else:
+		$anim.play("idle")
 	move_and_slide()
 	if Input.is_action_just_pressed("jump") and !jumping:
 		jumping = true
