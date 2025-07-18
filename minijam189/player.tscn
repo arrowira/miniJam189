@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj14p0oiemypa"]
+[gd_scene load_steps=9 format=3 uid="uid://bj14p0oiemypa"]
 
 [ext_resource type="Script" path="res://plaayerMovement.gd" id="1_0yxif"]
 [ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
+[ext_resource type="Texture2D" uid="uid://bxutoko141rn8" path="res://sprites/shadow-1.png.png" id="2_sk2sv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gjh"]
 
@@ -63,6 +64,11 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_0yxif")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0.305882)
+position = Vector2(0, 127)
+texture = ExtResource("2_sk2sv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_a4gjh")
