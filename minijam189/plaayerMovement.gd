@@ -7,17 +7,21 @@ var jumping = false
 var input_direction = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	
-	
-	velocity = input_direction * SPEED
-	if velocity.length() > 0.1:
-		$anim.play("walk")
+	if velocity.x<0:
+		$Sprite2D.flip_h = true
 	else:
-		$anim.play("idle")
+		$Sprite2D.flip_h = false
+	velocity = input_direction * SPEED
+	if !jumping:
+		if velocity.length() > 0.1:
+			$anim.play("walk")
+		else:
+			$anim.play("idle")
 	move_and_slide()
 	if Input.is_action_just_pressed("jump") and !jumping:
 		jumping = true
 		SPEED*=1.5
-		print("startTimer")
+		$anim.play("jump")
 		$jumpTimer.start()
 	else:
 		if !jumping:
@@ -25,6 +29,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_jump_timer_timeout() -> void:
-	print("endTimer")
 	SPEED/=1.5
 	jumping = false
