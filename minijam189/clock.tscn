@@ -11,6 +11,8 @@
 texture = ExtResource("1_vav08")
 
 [node name="bigHand" type="Node2D" parent="."]
+script = ExtResource("3_0b6dg")
+handSpeed = 0.75
 
 [node name="Sprite2D" type="Sprite2D" parent="bigHand"]
 position = Vector2(0, -784)
@@ -18,6 +20,7 @@ texture = ExtResource("2_4w3bt")
 
 [node name="littleHand" type="Node2D" parent="."]
 script = ExtResource("3_0b6dg")
+handSpeed = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="littleHand"]
 position = Vector2(0, -794)
