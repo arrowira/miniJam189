@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2kioto6ko64t"]
+[gd_scene load_steps=3 format=3 uid="uid://da84iljfblkf7"]
 
-[ext_resource type="PackedScene" uid="uid://budb0yq8634uc" path="res://clock.tscn" id="1_cu0o8"]
-[ext_resource type="PackedScene" uid="uid://bj14p0oiemypa" path="res://player.tscn" id="2_fvhht"]
+[ext_resource type="PackedScene" uid="uid://dh5gwa1vkhg2n" path="res://clock.tscn" id="1_cu0o8"]
+[ext_resource type="PackedScene" uid="uid://r10kfgnss2h0" path="res://player.tscn" id="2_fvhht"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_cu0o8")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
 
 [node name="player" parent="." instance=ExtResource("2_fvhht")]
