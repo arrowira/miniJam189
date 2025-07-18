@@ -9,12 +9,12 @@ size = Vector2(81, 81)
 [node name="Eyeball" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(1, 1)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ykwq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.500003, 0.500002)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_aob3g")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
