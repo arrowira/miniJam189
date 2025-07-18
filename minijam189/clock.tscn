@@ -1,14 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh5gwa1vkhg2n"]
+[gd_scene load_steps=6 format=3 uid="uid://dh5gwa1vkhg2n"]
 
 [ext_resource type="Texture2D" uid="uid://c12x7pfthy2tx" path="res://sprites/clock-1.png.png" id="1_vav08"]
 [ext_resource type="Texture2D" uid="uid://xtel24lbx530" path="res://sprites/bigClockHand-1.png.png" id="2_4w3bt"]
 [ext_resource type="Script" path="res://clockMovement.gd" id="3_0b6dg"]
 [ext_resource type="Texture2D" uid="uid://cknpkl1nwirt" path="res://sprites/littleClockHand-1.png.png" id="4_sxq22"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvik4"]
+size = Vector2(38, 1371)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ClockSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_vav08")
+
+[node name="littleHand" type="Node2D" parent="."]
+script = ExtResource("3_0b6dg")
+handSpeed = 0.25
+
+[node name="Sprite2D" type="Sprite2D" parent="littleHand"]
+position = Vector2(0, -794)
+texture = ExtResource("4_sxq22")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="littleHand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="littleHand/StaticBody2D"]
+position = Vector2(-1, -670.5)
+shape = SubResource("RectangleShape2D_mvik4")
 
 [node name="bigHand" type="Node2D" parent="."]
 script = ExtResource("3_0b6dg")
@@ -18,10 +35,8 @@ handSpeed = 0.75
 position = Vector2(0, -784)
 texture = ExtResource("2_4w3bt")
 
-[node name="littleHand" type="Node2D" parent="."]
-script = ExtResource("3_0b6dg")
-handSpeed = 0.25
+[node name="StaticBody2D" type="StaticBody2D" parent="bigHand"]
 
-[node name="Sprite2D" type="Sprite2D" parent="littleHand"]
-position = Vector2(0, -794)
-texture = ExtResource("4_sxq22")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/StaticBody2D"]
+position = Vector2(-1, -683)
+shape = SubResource("RectangleShape2D_mvik4")

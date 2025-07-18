@@ -26,6 +26,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		if !jumping:
 			input_direction = Input.get_vector("right","left", "up", "down")
+	if jumping == true:
+		get_node("FeetCollider").disabled = true
+	else:
+		get_node("FeetCollider").disabled = false
 
 
 func _on_jump_timer_timeout() -> void:
