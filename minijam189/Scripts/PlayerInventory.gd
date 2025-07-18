@@ -8,15 +8,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if ItemID != 0:
-		print(ItemID)
 	pass
 
 func ParseItem(Id):
+	Holding = true
+	var Texture = "";
 	match Id:
 		"Eye":
 			ItemID = 1
+			Texture = "res://sprites/Eyeball.png"
 		"Heart":
 			ItemID = 2
+			Texture = "res://sprites/WashingMachineHeart.png"
+	var sprite = Sprite2D.new()
+	sprite.texture = load(Texture)
+	sprite.scale.x = 10
+	sprite.scale.y = 10
+	sprite.texture_filter = sprite.TEXTURE_FILTER_NEAREST
+	get_node("/root/Node2D/player/Player").add_child(sprite)
+
 		
 	

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://3rpo24fr3qjk"]
+
+[ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="1_hh8bs"]
+[ext_resource type="Texture2D" uid="uid://8mjr3ycmfkoq" path="res://sprites/WashingMachineHeart.png" id="2_p4oa2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
+size = Vector2(8, 8)
+
+[node name="Heart" type="Node2D"]
+
+[node name="Heart" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_hh8bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart"]
+position = Vector2(0, 1.90735e-07)
+shape = SubResource("RectangleShape2D_s2j77")
+
+[node name="Sprite2D" type="Sprite2D" parent="Heart"]
+texture_filter = 1
+texture = ExtResource("2_p4oa2")
+
+[connection signal="body_entered" from="Heart" to="Heart" method="_on_body_entered"]

@@ -14,5 +14,11 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name == "Player":
 		if(get_node("/root/Node2D/player/Player/InventoryManager").Holding == false):
-			get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Eye")
+			match get_path():
+				NodePath("/root/Node2D/Eyeball/Eye"):
+					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Eye")
+			match get_path():
+				NodePath("/root/Node2D/Heart/Heart"):
+					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Heart")
 			queue_free()
+			

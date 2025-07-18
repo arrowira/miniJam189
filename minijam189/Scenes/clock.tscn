@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cknpkl1nwirt" path="res://sprites/littleClockHand-1.png.png" id="4_sxq22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvik4"]
-size = Vector2(38, 1371)
+size = Vector2(41.5, 1179)
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,7 +24,7 @@ texture = ExtResource("4_sxq22")
 [node name="StaticBody2D" type="StaticBody2D" parent="littleHand"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="littleHand/StaticBody2D"]
-position = Vector2(-1, -670.5)
+position = Vector2(1.5, -492)
 shape = SubResource("RectangleShape2D_mvik4")
 
 [node name="bigHand" type="Node2D" parent="."]
@@ -38,5 +38,5 @@ texture = ExtResource("2_4w3bt")
 [node name="StaticBody2D" type="StaticBody2D" parent="bigHand"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/StaticBody2D"]
-position = Vector2(-1, -683)
+position = Vector2(-5.25, -765.5)
 shape = SubResource("RectangleShape2D_mvik4")
