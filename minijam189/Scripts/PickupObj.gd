@@ -17,16 +17,12 @@ func _on_body_entered(body):
 			match get_path():
 				NodePath("/root/Node2D/Eyeball/Eye"):
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Eye")
-			match get_path():
 				NodePath("/root/Node2D/Heart/Heart"):
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Heart")
-			match get_path():
 				NodePath("/root/Node2D/StrangeLump/Lump"):
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Lump")
-			match get_path():
 				NodePath("/root/Node2D/CandyCorn/Candy"):
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Candy")
-			match get_path():
 				NodePath("/root/Node2D/VoidEssence/Void"):
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Void")
 			queue_free()
