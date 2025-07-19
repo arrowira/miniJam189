@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_s2j77")
 
 [node name="Sprite2D" type="Sprite2D" parent="Heart"]
 texture_filter = 1
+scale = Vector2(1.7, 1.7)
 texture = ExtResource("2_p4oa2")
 
 [connection signal="body_entered" from="Heart" to="Heart" method="_on_body_entered"]
