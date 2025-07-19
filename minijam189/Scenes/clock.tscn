@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh5gwa1vkhg2n"]
+[gd_scene load_steps=6 format=3 uid="uid://cgwo618sggyid"]
 
 [ext_resource type="Texture2D" uid="uid://c12x7pfthy2tx" path="res://sprites/clock-1.png.png" id="1_vav08"]
-[ext_resource type="Texture2D" uid="uid://xtel24lbx530" path="res://sprites/bigClockHand-1.png.png" id="2_4w3bt"]
 [ext_resource type="Script" path="res://Scripts/clockMovement.gd" id="3_0b6dg"]
-[ext_resource type="Texture2D" uid="uid://cknpkl1nwirt" path="res://sprites/littleClockHand-1.png.png" id="4_sxq22"]
+[ext_resource type="Texture2D" uid="uid://drro8gtu0bxxv" path="res://sprites/littleHand-1.png.png" id="3_ufrr4"]
+[ext_resource type="Texture2D" uid="uid://dof5n7x2mvk71" path="res://sprites/bigHand-1.png.png" id="4_whh6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvik4"]
 size = Vector2(41.5, 1179)
@@ -19,7 +19,7 @@ handSpeed = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="littleHand"]
 position = Vector2(0, -794)
-texture = ExtResource("4_sxq22")
+texture = ExtResource("3_ufrr4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="littleHand"]
 
@@ -33,7 +33,7 @@ handSpeed = 0.75
 
 [node name="Sprite2D" type="Sprite2D" parent="bigHand"]
 position = Vector2(0, -784)
-texture = ExtResource("2_4w3bt")
+texture = ExtResource("4_whh6e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="bigHand"]
 

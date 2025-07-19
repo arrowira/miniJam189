@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 func ParseItem(Id):
+	for n in get_parent().get_node("Sprite2D").get_children():
+		get_parent().get_node("Sprite2D").remove_child(n)
+		n.queue_free()
 	Holding = true
 	var Texture = "";
 	match Id:
@@ -32,10 +35,9 @@ func ParseItem(Id):
 			Texture = "res://sprites/VoidEssence.png"
 	var sprite = Sprite2D.new()
 	sprite.texture = load(Texture)
-	sprite.scale.x = 10
-	sprite.scale.y = 10
+	sprite.scale.x = 17
+	sprite.scale.y = 17
 	sprite.texture_filter = sprite.TEXTURE_FILTER_NEAREST
-	get_node("/root/Node2D/player/Player").add_child(sprite)
-
+	get_node("/root/Node2D/player/Player/Sprite2D").add_child(sprite)
 		
 	

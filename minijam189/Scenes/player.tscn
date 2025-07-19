@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://r10kfgnss2h0"]
+[gd_scene load_steps=12 format=3 uid="uid://r10kfgnss2h0"]
 
 [ext_resource type="Script" path="res://Scripts/plaayerMovement.gd" id="1_0yxif"]
+[ext_resource type="PackedScene" uid="uid://lelq6qmcrqnw" path="res://Scenes/CandyCorn.tscn" id="1_4h7he"]
 [ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
 [ext_resource type="Texture2D" uid="uid://bxutoko141rn8" path="res://sprites/shadow-1.png.png" id="2_sk2sv"]
 [ext_resource type="Script" path="res://Scripts/PlayerInventory.gd" id="4_keevx"]
@@ -103,6 +104,9 @@ _data = {
 }
 
 [node name="player" type="Node2D"]
+
+[node name="CandyCorn" parent="." instance=ExtResource("1_4h7he")]
+position = Vector2(124, -22)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 collision_layer = 3

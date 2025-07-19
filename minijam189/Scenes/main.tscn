@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://da84iljfblkf7"]
 
-[ext_resource type="PackedScene" uid="uid://dh5gwa1vkhg2n" path="res://Scenes/clock.tscn" id="1_kxde8"]
+[ext_resource type="PackedScene" uid="uid://cgwo618sggyid" path="res://Scenes/clock.tscn" id="1_kxde8"]
 [ext_resource type="PackedScene" uid="uid://r10kfgnss2h0" path="res://Scenes/player.tscn" id="2_ee1yk"]
 [ext_resource type="PackedScene" uid="uid://ceou6ww1oulsy" path="res://Scenes/Cauldron.tscn" id="3_8guol"]
 [ext_resource type="PackedScene" uid="uid://p5sgoheg6jxg" path="res://Scenes/Eyeball.tscn" id="4_htf55"]
