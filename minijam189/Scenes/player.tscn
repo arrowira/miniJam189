@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://r10kfgnss2h0"]
+[gd_scene load_steps=12 format=3 uid="uid://r10kfgnss2h0"]
 
-[ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_0yxif"]
+[ext_resource type="Script" path="res://Scripts/plaayerMovement.gd" id="1_0yxif"]
 [ext_resource type="PackedScene" uid="uid://lelq6qmcrqnw" path="res://Scenes/CandyCorn.tscn" id="1_4h7he"]
 [ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
 [ext_resource type="Texture2D" uid="uid://bxutoko141rn8" path="res://sprites/shadow-1.png.png" id="2_sk2sv"]
@@ -103,9 +103,6 @@ _data = {
 "walk": SubResource("Animation_du7r7")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13k1w"]
-size = Vector2(347, 193)
-
 [node name="player" type="Node2D"]
 
 [node name="CandyCorn" parent="." instance=ExtResource("1_4h7he")]
@@ -145,11 +142,5 @@ libraries = {
 
 [node name="InventoryManager" type="Node" parent="Player"]
 script = ExtResource("4_keevx")
-
-[node name="playerArea" type="Area2D" parent="Player/InventoryManager"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/InventoryManager/playerArea"]
-position = Vector2(-8.5, -15.5)
-shape = SubResource("RectangleShape2D_13k1w")
 
 [connection signal="timeout" from="Player/jumpTimer" to="Player" method="_on_jump_timer_timeout"]

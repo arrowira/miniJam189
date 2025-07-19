@@ -1,15 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgwo618sggyid"]
+[gd_scene load_steps=6 format=3 uid="uid://cgwo618sggyid"]
 
 [ext_resource type="Texture2D" uid="uid://c12x7pfthy2tx" path="res://sprites/clock-1.png.png" id="1_vav08"]
 [ext_resource type="Script" path="res://Scripts/clockMovement.gd" id="3_0b6dg"]
 [ext_resource type="Texture2D" uid="uid://drro8gtu0bxxv" path="res://sprites/littleHand-1.png.png" id="3_ufrr4"]
 [ext_resource type="Texture2D" uid="uid://dof5n7x2mvk71" path="res://sprites/bigHand-1.png.png" id="4_whh6e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y78oi"]
-size = Vector2(38, 1082)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctcm2"]
-size = Vector2(39, 1596)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvik4"]
+size = Vector2(41.5, 1179)
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,11 +21,11 @@ handSpeed = 0.25
 position = Vector2(0, -794)
 texture = ExtResource("3_ufrr4")
 
-[node name="Area2D" type="Area2D" parent="littleHand"]
+[node name="StaticBody2D" type="StaticBody2D" parent="littleHand"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="littleHand/Area2D"]
-position = Vector2(1, -531)
-shape = SubResource("RectangleShape2D_y78oi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="littleHand/StaticBody2D"]
+position = Vector2(1.5, -492)
+shape = SubResource("RectangleShape2D_mvik4")
 
 [node name="bigHand" type="Node2D" parent="."]
 script = ExtResource("3_0b6dg")
@@ -38,8 +35,8 @@ handSpeed = 0.75
 position = Vector2(0, -784)
 texture = ExtResource("4_whh6e")
 
-[node name="Area2D" type="Area2D" parent="bigHand"]
+[node name="StaticBody2D" type="StaticBody2D" parent="bigHand"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/Area2D"]
-position = Vector2(0.5, -788)
-shape = SubResource("RectangleShape2D_ctcm2")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/StaticBody2D"]
+position = Vector2(-5.25, -765.5)
+shape = SubResource("RectangleShape2D_mvik4")
