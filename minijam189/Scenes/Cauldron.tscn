@@ -10,7 +10,7 @@ size = Vector2(636, 347.5)
 [sub_resource type="CanvasTexture" id="CanvasTexture_7r5qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ing50"]
-size = Vector2(987, 530)
+size = Vector2(684, 435)
 
 [node name="Cauldron" type="Node2D"]
 
@@ -43,5 +43,5 @@ polygon = PackedVector2Array(-0.259887, -0.506024, 0.844633, -0.506024, 1.08192,
 texture = ExtResource("1_rw2sa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cauldronArea"]
-position = Vector2(18.5, 104)
+position = Vector2(-10, 100.5)
 shape = SubResource("RectangleShape2D_ing50")
