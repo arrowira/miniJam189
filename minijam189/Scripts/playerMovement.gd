@@ -41,6 +41,7 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 		
 		slipping = true
 		$anim.play("slip")
+		$InventoryManager.destroyObj()
 		$slipTimer.start()
 		
 

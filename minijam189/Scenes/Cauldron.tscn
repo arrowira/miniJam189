@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceou6ww1oulsy"]
+[gd_scene load_steps=7 format=3 uid="uid://ceou6ww1oulsy"]
 
+[ext_resource type="Texture2D" uid="uid://bclwgpdsc6s1m" path="res://sprites/large Shadow-1.png (1).png" id="1_ge2nr"]
 [ext_resource type="Script" path="res://Scripts/cauldron.gd" id="1_j0e8q"]
 [ext_resource type="Texture2D" uid="uid://cr6gbmelb0d2e" path="res://sprites/cauldron-1.png.png" id="1_rw2sa"]
 
@@ -21,6 +22,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 68.25)
 shape = SubResource("RectangleShape2D_6ksj4")
+
+[node name="Area2D" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(1, 1, 1, 0.466667)
+z_index = -80
+position = Vector2(-2, 28.5)
+texture = ExtResource("1_ge2nr")
 
 [node name="cauldronArea" type="Area2D" parent="."]
 script = ExtResource("1_j0e8q")

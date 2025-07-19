@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_s2j77")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lump"]
 texture_filter = 1
+scale = Vector2(1.7, 1.7)
 texture = ExtResource("2_c2yu1")
 
 [connection signal="body_entered" from="Lump" to="Lump" method="_on_body_entered"]
