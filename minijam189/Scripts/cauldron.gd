@@ -10,5 +10,7 @@ func _on_body_entered(area):
 	if area.name == "Player":
 		if area.get_node("InventoryManager").Holding == true:
 			$soupTexture.color = area.get_node("InventoryManager").getColor()
+			#get_parent().get_node("GPUParticles2D")
+			$"../GPUParticles2D".modulate = area.get_node("InventoryManager").getColor()
 			area.get_node("InventoryManager").destroyObj()
 		

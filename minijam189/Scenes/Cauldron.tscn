@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceou6ww1oulsy"]
+[gd_scene load_steps=11 format=3 uid="uid://ceou6ww1oulsy"]
 
 [ext_resource type="Texture2D" uid="uid://bclwgpdsc6s1m" path="res://sprites/large Shadow-1.png (1).png" id="1_ge2nr"]
 [ext_resource type="Script" path="res://Scripts/cauldron.gd" id="1_j0e8q"]
@@ -11,6 +11,31 @@ size = Vector2(636, 347.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ing50"]
 size = Vector2(684, 435)
+
+[sub_resource type="Curve" id="Curve_nrtof"]
+_data = [Vector2(0, 0.406593), 0.0, 0.0, 0, 0, Vector2(0.586667, 0.802198), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fj2cf"]
+curve = SubResource("Curve_nrtof")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m0h83"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 200, 100)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -15.5
+angle_max = 234.0
+radial_velocity_min = -90.0
+radial_velocity_max = 90.0
+gravity = Vector3(0, -100, 0)
+scale_min = 29.17
+scale_max = 57.34
+scale_curve = SubResource("CurveTexture_fj2cf")
+hue_variation_min = -0.09
+hue_variation_max = 0.04
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xnucd"]
 
 [node name="Cauldron" type="Node2D"]
 
@@ -35,7 +60,7 @@ script = ExtResource("1_j0e8q")
 [node name="soupTexture" type="Polygon2D" parent="cauldronArea"]
 position = Vector2(-89, -96)
 scale = Vector2(354, 166)
-color = Color(0.354165, 0.707073, 0, 1)
+color = Color(0.485528, 0.619791, 0.762971, 1)
 texture = SubResource("CanvasTexture_7r5qq")
 polygon = PackedVector2Array(-0.259887, -0.506024, 0.844633, -0.506024, 1.08192, -0.162651, 0.90678, 0.325301, -0.149717, 0.373494, -0.542373, -0.00602406, -0.480226, -0.319277, -0.403955, -0.415663)
 
@@ -45,3 +70,12 @@ texture = ExtResource("1_rw2sa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cauldronArea"]
 position = Vector2(-10, 100.5)
 shape = SubResource("RectangleShape2D_ing50")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.441491, 0.654114, 0.801832, 1)
+position = Vector2(7, -151)
+rotation = -1.57519
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_m0h83")
+texture = SubResource("CanvasTexture_xnucd")
+lifetime = 3.0
