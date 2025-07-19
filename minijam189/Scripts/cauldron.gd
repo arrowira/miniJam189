@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_body_entered(area):
 	if area.name == "Player":
-		$soupTexture.color = area.get_node("InventoryManager").getColor()
-		area.get_node("InventoryManager").destroyObj()
-	
+		if area.get_node("InventoryManager").Holding == true:
+			$soupTexture.color = area.get_node("InventoryManager").getColor()
+			area.get_node("InventoryManager").destroyObj()
+		
