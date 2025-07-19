@@ -1,11 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://da84iljfblkf7"]
+[gd_scene load_steps=9 format=3 uid="uid://da84iljfblkf7"]
 
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dh5gwa1vkhg2n" path="res://Scenes/clock.tscn" id="1_kxde8"]
-=======
-[ext_resource type="PackedScene" uid="uid://era61honrxfh" path="res://Scenes/background.tscn" id="1_8cshn"]
-[ext_resource type="PackedScene" uid="uid://cgwo618sggyid" path="res://Scenes/clock.tscn" id="1_kxde8"]
->>>>>>> cb8a88e2eab8da2118b74f0f3d9170b0e2039926
 [ext_resource type="PackedScene" uid="uid://r10kfgnss2h0" path="res://Scenes/player.tscn" id="2_ee1yk"]
 [ext_resource type="PackedScene" uid="uid://ceou6ww1oulsy" path="res://Scenes/Cauldron.tscn" id="3_8guol"]
 [ext_resource type="PackedScene" uid="uid://p5sgoheg6jxg" path="res://Scenes/Eyeball.tscn" id="4_htf55"]
@@ -16,9 +11,6 @@
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
-
-[node name="background" parent="." instance=ExtResource("1_8cshn")]
-z_index = -10
 
 [node name="Node2D" parent="." instance=ExtResource("1_kxde8")]
 z_index = -1
