@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://gohnnfa3qlyc"]
+
+[ext_resource type="AudioStream" uid="uid://dt30apnmd368d" path="res://WorkingAroundTheClockMusic.mp3" id="1_y6p3o"]
+
+[node name="Music" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_y6p3o")
+volume_db = -8.693
+autoplay = true
