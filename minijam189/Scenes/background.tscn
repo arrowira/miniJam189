@@ -4,10 +4,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvq6p"]
 shader = ExtResource("1_qgdcf")
-shader_parameter/horizontalMovement = 1.9
+shader_parameter/horizontalMovement = -0.5
 shader_parameter/verticalMovement = 0.1
-shader_parameter/frequencyStar = 0.1
-shader_parameter/sizeStar = 100.0
+shader_parameter/frequencyStar = 0.01
+shader_parameter/sizeStar = 30.0
 shader_parameter/brightnessStar = 3.0
 shader_parameter/shineFrequencyStar = 8.0
 shader_parameter/transparencyStar = 0.0
