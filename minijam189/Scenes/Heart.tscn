@@ -7,6 +7,7 @@
 size = Vector2(8, 8)
 
 [node name="Heart" type="Node2D"]
+z_index = -80
 
 [node name="Heart" type="Area2D" parent="."]
 scale = Vector2(10, 10)

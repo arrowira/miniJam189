@@ -7,6 +7,7 @@
 size = Vector2(8, 8)
 
 [node name="StrangeLump" type="Node2D"]
+z_index = -80
 
 [node name="Lump" type="Area2D" parent="."]
 scale = Vector2(10, 10)

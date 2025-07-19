@@ -18,7 +18,7 @@ func destroyObj():
 func getColor():
 	match ItemID:
 		1:
-			return Color.WHITE
+			return Color.ANTIQUE_WHITE
 		2:
 			return Color.RED
 		3:
@@ -45,7 +45,7 @@ func ParseItem(Id):
 			ItemID = 4
 			Texture = "res://sprites/CandyCorn.png"
 		"Void":
-			ItemID = 4
+			ItemID = 5
 			Texture = "res://sprites/VoidEssence.png"
 	var sprite = Sprite2D.new()
 	sprite.texture = load(Texture)
