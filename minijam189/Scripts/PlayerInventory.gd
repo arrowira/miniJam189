@@ -10,11 +10,25 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	pass
-
-func ParseItem(Id):
+func destroyObj():
 	for n in get_parent().get_node("Sprite2D").get_children():
 		get_parent().get_node("Sprite2D").remove_child(n)
 		n.queue_free()
+	Holding = false
+func getColor():
+	match ItemID:
+		1:
+			return Color.WHITE
+		2:
+			return Color.RED
+		3:
+			return Color.PURPLE
+		4:
+			return Color.ORANGE
+		5:
+			return Color.BLACK
+func ParseItem(Id):
+	destroyObj();
 	Holding = true
 	var Texture = "";
 	match Id:
