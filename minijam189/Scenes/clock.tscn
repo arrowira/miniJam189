@@ -17,6 +17,7 @@ size = Vector2(39, 1596)
 texture = ExtResource("1_vav08")
 
 [node name="littleHand" type="Node2D" parent="."]
+rotation = 1.31598
 script = ExtResource("3_0b6dg")
 handSpeed = 0.25
 
@@ -24,9 +25,9 @@ handSpeed = 0.25
 position = Vector2(0, -794)
 texture = ExtResource("3_ufrr4")
 
-[node name="Area2D" type="Area2D" parent="littleHand"]
+[node name="littleHand" type="Area2D" parent="littleHand"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="littleHand/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="littleHand/littleHand"]
 position = Vector2(1, -531)
 shape = SubResource("RectangleShape2D_y78oi")
 
@@ -38,8 +39,8 @@ handSpeed = 0.75
 position = Vector2(0, -784)
 texture = ExtResource("4_whh6e")
 
-[node name="Area2D" type="Area2D" parent="bigHand"]
+[node name="bigHand" type="Area2D" parent="bigHand"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/bigHand"]
 position = Vector2(0.5, -788)
 shape = SubResource("RectangleShape2D_ctcm2")

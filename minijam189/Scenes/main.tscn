@@ -20,7 +20,7 @@ z_index = -10
 z_index = -1
 
 [node name="player" parent="." instance=ExtResource("2_ee1yk")]
-position = Vector2(934, -9)
+position = Vector2(1126, -77)
 
 [node name="Cauldron" parent="." instance=ExtResource("3_8guol")]
 position = Vector2(-21, -38)

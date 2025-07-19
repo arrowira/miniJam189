@@ -22,19 +22,19 @@ collision_mask = 2
 position = Vector2(0, 68.25)
 shape = SubResource("RectangleShape2D_6ksj4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="cauldronArea" type="Area2D" parent="."]
 script = ExtResource("1_j0e8q")
 
-[node name="soupTexture" type="Polygon2D" parent="Area2D"]
+[node name="soupTexture" type="Polygon2D" parent="cauldronArea"]
 position = Vector2(-89, -96)
 scale = Vector2(354, 166)
 color = Color(0.354165, 0.707073, 0, 1)
 texture = SubResource("CanvasTexture_7r5qq")
 polygon = PackedVector2Array(-0.259887, -0.506024, 0.844633, -0.506024, 1.08192, -0.162651, 0.90678, 0.325301, -0.149717, 0.373494, -0.542373, -0.00602406, -0.480226, -0.319277, -0.403955, -0.415663)
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="cauldronArea"]
 texture = ExtResource("1_rw2sa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cauldronArea"]
 position = Vector2(18.5, 104)
 shape = SubResource("RectangleShape2D_ing50")
