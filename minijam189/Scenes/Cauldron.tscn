@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceou6ww1oulsy"]
+[gd_scene load_steps=15 format=3 uid="uid://ceou6ww1oulsy"]
 
 [ext_resource type="Texture2D" uid="uid://bclwgpdsc6s1m" path="res://sprites/large Shadow-1.png (1).png" id="1_ge2nr"]
 [ext_resource type="Script" path="res://Scripts/cauldron.gd" id="1_j0e8q"]
@@ -38,6 +38,33 @@ hue_variation_max = 0.04
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xnucd"]
 
+[sub_resource type="Curve" id="Curve_vgo0q"]
+_data = [Vector2(0, 0.142857), 0.0, 0.0, 0, 0, Vector2(0.526667, 0.681319), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gvxw2"]
+curve = SubResource("Curve_vgo0q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nbiai"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(200, 40, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -101.4
+angle_max = 121.7
+angular_velocity_min = -81.13
+angular_velocity_max = 121.69
+gravity = Vector3(0, -90, 0)
+linear_accel_min = -14.08
+linear_accel_max = 16.9
+scale_min = 15.08
+scale_max = 50.0
+scale_curve = SubResource("CurveTexture_gvxw2")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+turbulence_enabled = true
+turbulence_noise_strength = 4.58
+
 [node name="Cauldron" type="Node2D"]
 script = ExtResource("1_utyoj")
 
@@ -74,6 +101,7 @@ position = Vector2(-10, 100.5)
 shape = SubResource("RectangleShape2D_ing50")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 modulate = Color(0.441491, 0.654114, 0.801832, 1)
 position = Vector2(7, -151)
 rotation = -1.57519
@@ -81,6 +109,20 @@ amount = 60
 process_material = SubResource("ParticleProcessMaterial_m0h83")
 texture = SubResource("CanvasTexture_xnucd")
 lifetime = 3.0
+
+[node name="winParts" type="GPUParticles2D" parent="."]
+modulate = Color(0.441491, 0.654114, 0.801832, 1)
+position = Vector2(4, -140)
+rotation = 3.13281
+scale = Vector2(1, 1)
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_nbiai")
+texture = SubResource("CanvasTexture_xnucd")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.61
 
 [node name="winTimer" type="Timer" parent="."]
 wait_time = 0.5

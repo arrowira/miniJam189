@@ -20,6 +20,7 @@ func Filled(id):
 		items.remove_at(0)
 		if len(items) == 0:
 			$winTimer.start()
+			$winParts.emitting = true
 			ari = 0
 			get_parent().get_node("CanvasLayer").addTime(50)
 			
