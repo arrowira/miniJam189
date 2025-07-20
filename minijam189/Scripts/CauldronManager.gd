@@ -19,6 +19,7 @@ func Filled(id):
 		items.remove_at(0)
 		if len(items) == 0:
 			$winTimer.start()
+			get_parent().get_node("CanvasLayer").addTime(50)
 			
 	pass
 

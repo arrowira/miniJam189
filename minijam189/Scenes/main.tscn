@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://da84iljfblkf7"]
+[gd_scene load_steps=12 format=3 uid="uid://da84iljfblkf7"]
 
 [ext_resource type="PackedScene" uid="uid://vkfh67doeeft" path="res://Scenes/background.tscn" id="1_8cshn"]
 [ext_resource type="PackedScene" uid="uid://cgwo618sggyid" path="res://Scenes/clock.tscn" id="1_kxde8"]
@@ -7,7 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://3rpo24fr3qjk" path="res://Scenes/Heart.tscn" id="5_n752p"]
 [ext_resource type="PackedScene" uid="uid://dk1mm81gcqnrd" path="res://Scenes/StrangeLump.tscn" id="6_vygpc"]
 [ext_resource type="PackedScene" uid="uid://lelq6qmcrqnw" path="res://Scenes/CandyCorn.tscn" id="7_27smt"]
+[ext_resource type="Script" path="res://Scenes/topTimer.gd" id="9_3ohyp"]
+[ext_resource type="FontFile" uid="uid://i2i6q3n474mm" path="res://at01.ttf" id="9_smo7h"]
 [ext_resource type="PackedScene" uid="uid://but00jwwmbkpf" path="res://Scenes/spawner.tscn" id="10_x8pka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq3yt"]
+bg_color = Color(0.255659, 0.255659, 0.255659, 1)
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -35,3 +40,32 @@ position = Vector2(7, -6)
 
 [node name="Heart" parent="." instance=ExtResource("5_n752p")]
 position = Vector2(575, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_3ohyp")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 388.0
+offset_top = 19.0
+offset_right = 770.0
+offset_bottom = 105.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aq3yt")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -27.0
+offset_right = 381.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.681922, 1, 0.648639, 1)
+theme_override_fonts/font = ExtResource("9_smo7h")
+theme_override_font_sizes/font_size = 150
+text = "20
+
+"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 0.6
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_timer_timeout"]
