@@ -30,7 +30,7 @@ func StartRecipe(amt):
 	for i in range(amt):
 		rng.randomize()
 		var n = rng.randi_range(1, 5)
-		var Texture = "";
+		var Texture = ""
 		match n:
 			1:
 				Texture = "res://sprites/Eyeball.png"
