@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 					
 				5:
 					instance = voidE.instantiate()
-			instance.position = Vector2(get_parent().position.x+1200,get_parent().position.y)
+			instance.position = Vector2(get_parent().global_position.x+200,get_parent().global_position.y+100)
 			destroyObj()
 			get_parent().get_parent().get_parent().add_child(instance)
 					
