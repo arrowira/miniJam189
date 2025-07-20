@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://lelq6qmcrqnw" path="res://Scenes/CandyCorn.tscn" id="7_27smt"]
 [ext_resource type="Script" path="res://Scenes/topTimer.gd" id="9_3ohyp"]
 [ext_resource type="FontFile" uid="uid://i2i6q3n474mm" path="res://at01.ttf" id="9_smo7h"]
-[ext_resource type="PackedScene" uid="uid://but00jwwmbkpf" path="res://Scenes/spawner.tscn" id="10_x8pka"]
+[ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="10_x8pka"]
 [ext_resource type="Texture2D" uid="uid://cu7ir2uf1e4bd" path="res://sprites/deathScreenImage-1.png.png" id="11_fep7c"]
 [ext_resource type="Script" path="res://Scenes/deathScreenManager.gd" id="11_xftg3"]
 
