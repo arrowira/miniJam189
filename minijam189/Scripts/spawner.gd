@@ -33,5 +33,4 @@ func _on_spawn_timer_timeout() -> void:
 	instance.position = Vector2(sin(deg_to_rad(angle))*hyp,cos(deg_to_rad(angle))*hyp)
 	#print(instance.position)
 	get_parent().add_child(instance)
-	print(instance.get_path())
 	

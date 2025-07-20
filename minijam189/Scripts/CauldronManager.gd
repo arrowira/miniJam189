@@ -16,6 +16,10 @@ func Filled(id):
 	if(items[0] == id):
 		ari+=1
 		get_node(str(ari-1)).queue_free()
+		items.remove_at(0)
+		if len(items) == 0:
+			$winTimer.start()
+			
 	pass
 
 #cauldron coords -21 31
@@ -55,3 +59,7 @@ func StartRecipe(amt):
 		get_node(get_path()).add_child(sprite)
 		
 	pass
+
+
+func _on_win_timer_timeout() -> void:
+	StartRecipe(5)

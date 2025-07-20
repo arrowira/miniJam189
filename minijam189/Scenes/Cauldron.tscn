@@ -81,3 +81,9 @@ amount = 60
 process_material = SubResource("ParticleProcessMaterial_m0h83")
 texture = SubResource("CanvasTexture_xnucd")
 lifetime = 3.0
+
+[node name="winTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="winTimer" to="." method="_on_win_timer_timeout"]
