@@ -1,5 +1,5 @@
 extends Area2D
-
+@export var itemID = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,16 +14,16 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name == "Player":
 		if(get_node("/root/Node2D/player/Player/InventoryManager").Holding == false):
-			match get_path():
-				NodePath("/root/Node2D/Eyeball/Eye"):
+			match itemID:
+				0:
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Eye")
-				NodePath("/root/Node2D/Heart/Heart"):
+				1:
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Heart")
-				NodePath("/root/Node2D/StrangeLump/Lump"):
+				2:
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Lump")
-				NodePath("/root/Node2D/CandyCorn/Candy"):
+				3:
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Candy")
-				NodePath("/root/Node2D/VoidEssence/Void"):
+				4:
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Void")
 			queue_free()
 			

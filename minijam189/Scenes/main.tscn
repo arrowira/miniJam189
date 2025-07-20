@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://da84iljfblkf7"]
+[gd_scene load_steps=9 format=3 uid="uid://da84iljfblkf7"]
 
 [ext_resource type="PackedScene" uid="uid://vkfh67doeeft" path="res://Scenes/background.tscn" id="1_8cshn"]
 [ext_resource type="PackedScene" uid="uid://cgwo618sggyid" path="res://Scenes/clock.tscn" id="1_kxde8"]
 [ext_resource type="PackedScene" uid="uid://r10kfgnss2h0" path="res://Scenes/player.tscn" id="2_ee1yk"]
 [ext_resource type="PackedScene" uid="uid://ceou6ww1oulsy" path="res://Scenes/Cauldron.tscn" id="3_8guol"]
-[ext_resource type="PackedScene" uid="uid://p5sgoheg6jxg" path="res://Scenes/Eyeball.tscn" id="4_htf55"]
 [ext_resource type="PackedScene" uid="uid://3rpo24fr3qjk" path="res://Scenes/Heart.tscn" id="5_n752p"]
 [ext_resource type="PackedScene" uid="uid://dk1mm81gcqnrd" path="res://Scenes/StrangeLump.tscn" id="6_vygpc"]
 [ext_resource type="PackedScene" uid="uid://lelq6qmcrqnw" path="res://Scenes/CandyCorn.tscn" id="7_27smt"]
-[ext_resource type="PackedScene" uid="uid://504ougi0joh2" path="res://Scenes/VoidEssence.tscn" id="8_bsemg"]
+[ext_resource type="PackedScene" uid="uid://but00jwwmbkpf" path="res://Scenes/spawner.tscn" id="10_x8pka"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -25,17 +24,14 @@ position = Vector2(944, -77)
 [node name="Cauldron" parent="." instance=ExtResource("3_8guol")]
 position = Vector2(-21, -38)
 
-[node name="Eyeball" parent="." instance=ExtResource("4_htf55")]
-position = Vector2(758, -606)
-
-[node name="Heart" parent="." instance=ExtResource("5_n752p")]
-position = Vector2(732, 714)
-
 [node name="StrangeLump" parent="." instance=ExtResource("6_vygpc")]
 position = Vector2(-642, 852)
 
 [node name="CandyCorn" parent="." instance=ExtResource("7_27smt")]
 position = Vector2(-1079, -499)
 
-[node name="VoidEssence" parent="." instance=ExtResource("8_bsemg")]
-position = Vector2(-248, -1073)
+[node name="spawner" parent="." instance=ExtResource("10_x8pka")]
+position = Vector2(7, -6)
+
+[node name="Heart" parent="." instance=ExtResource("5_n752p")]
+position = Vector2(575, 0)

@@ -199,7 +199,7 @@ scale = Vector2(0.52676, 0.507365)
 script = SubResource("GDScript_iombi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/playerArea"]
-position = Vector2(-8.5, -15.5)
+position = Vector2(-7.59359, 275.935)
 shape = SubResource("RectangleShape2D_13k1w")
 
 [node name="InventoryManager" type="Node" parent="Player"]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bclwgpdsc6s1m" path="res://sprites/large Shadow-1.png (1).png" id="1_ge2nr"]
 [ext_resource type="Script" path="res://Scripts/cauldron.gd" id="1_j0e8q"]
 [ext_resource type="Texture2D" uid="uid://cr6gbmelb0d2e" path="res://sprites/cauldron-1.png.png" id="1_rw2sa"]
-[ext_resource type="Script" path="res://Scenes/CauldronManager.gd" id="1_utyoj"]
+[ext_resource type="Script" path="res://Scripts/CauldronManager.gd" id="1_utyoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ksj4"]
 size = Vector2(636, 347.5)
