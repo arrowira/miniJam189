@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name == "Player":
 		if(get_node("/root/Node2D/player/Player/InventoryManager").Holding == false):
+			if(itemID != get_node("").Item[0]):
+				return
 			match itemID:
 				0:
 					get_node("/root/Node2D/player/Player/InventoryManager").ParseItem("Eye")
