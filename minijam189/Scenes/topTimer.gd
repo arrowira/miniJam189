@@ -9,4 +9,7 @@ var t = 50.0
 
 func _on_timer_timeout() -> void:
 	t-=1
-	$Panel/Label.text = str(int(t))
+	if t <= -1:
+		$DeathScreen.visible = true
+	else:
+		$Panel/Label.text = str(int(t))

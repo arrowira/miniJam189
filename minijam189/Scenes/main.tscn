@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://da84iljfblkf7"]
+[gd_scene load_steps=15 format=3 uid="uid://da84iljfblkf7"]
 
 [ext_resource type="PackedScene" uid="uid://vkfh67doeeft" path="res://Scenes/background.tscn" id="1_8cshn"]
 [ext_resource type="PackedScene" uid="uid://cgwo618sggyid" path="res://Scenes/clock.tscn" id="1_kxde8"]
@@ -10,9 +10,13 @@
 [ext_resource type="Script" path="res://Scenes/topTimer.gd" id="9_3ohyp"]
 [ext_resource type="FontFile" uid="uid://i2i6q3n474mm" path="res://at01.ttf" id="9_smo7h"]
 [ext_resource type="PackedScene" uid="uid://but00jwwmbkpf" path="res://Scenes/spawner.tscn" id="10_x8pka"]
+[ext_resource type="Texture2D" uid="uid://cu7ir2uf1e4bd" path="res://sprites/deathScreenImage-1.png.png" id="11_fep7c"]
+[ext_resource type="Script" path="res://Scenes/deathScreenManager.gd" id="11_xftg3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq3yt"]
 bg_color = Color(0.255659, 0.255659, 0.255659, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_borpo"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -24,7 +28,7 @@ z_index = -10
 z_index = -1
 
 [node name="player" parent="." instance=ExtResource("2_ee1yk")]
-position = Vector2(944, -77)
+position = Vector2(17, 1412)
 
 [node name="Cauldron" parent="." instance=ExtResource("3_8guol")]
 position = Vector2(-21, -38)
@@ -68,4 +72,45 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 wait_time = 0.6
 
+[node name="DeathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_xftg3")
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer/DeathScreen"]
+material = SubResource("CanvasItemMaterial_borpo")
+layout_mode = 0
+offset_left = 105.0
+offset_top = 134.0
+offset_right = 1044.0
+offset_bottom = 2699.0
+texture = ExtResource("11_fep7c")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 238.0
+offset_right = 897.0
+offset_bottom = 318.0
+theme_override_fonts/font = ExtResource("9_smo7h")
+theme_override_font_sizes/font_size = 100
+text = "YOU FAILED YOUR DEADLINE
+"
+
+[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 321.0
+offset_right = 676.0
+offset_bottom = 426.0
+theme_override_fonts/font = ExtResource("9_smo7h")
+theme_override_font_sizes/font_size = 100
+text = "RETRY"
+
 [connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/DeathScreen/Panel/Button" to="CanvasLayer/DeathScreen" method="_on_button_button_down"]
