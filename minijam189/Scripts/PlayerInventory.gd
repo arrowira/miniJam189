@@ -2,14 +2,40 @@ extends Node
 
 var Holding = false
 var ItemID = 0;
+static var candy := preload("res://Scenes/CandyCorn.tscn")
+static var heart :=  preload("res://Scenes/Heart.tscn")
+static var voidE := preload("res://Scenes/VoidEssence.tscn")
+static var lump := preload("res://Scenes/StrangeLump.tscn")
+static var eye := preload("res://Scenes/Eyeball.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Holding = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	pass
+	if Input.is_action_just_pressed("drop"):
+		if Holding:
+			
+			var instance
+			match ItemID:
+				1:
+					instance = eye.instantiate()
+					
+				2:
+					instance = heart.instantiate()
+					
+				3:
+					instance = lump.instantiate()
+					
+				4:
+					instance = candy.insantiate()
+					
+				5:
+					instance = voidE.instantiate()
+			instance.position = Vector2(get_parent().position.x+1200,get_parent().position.y)
+			destroyObj()
+			get_parent().get_parent().get_parent().add_child(instance)
+					
 func destroyObj():
 	for n in get_parent().get_node("Sprite2D").get_children():
 		get_parent().get_node("Sprite2D").remove_child(n)

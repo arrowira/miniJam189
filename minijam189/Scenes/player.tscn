@@ -202,7 +202,7 @@ script = SubResource("GDScript_iombi")
 position = Vector2(-7.59359, 275.935)
 shape = SubResource("RectangleShape2D_13k1w")
 
-[node name="InventoryManager" type="Node" parent="Player"]
+[node name="InventoryManager" type="Node2D" parent="Player"]
 script = ExtResource("4_keevx")
 
 [node name="slipTimer" type="Timer" parent="Player"]
