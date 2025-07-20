@@ -45,12 +45,15 @@ func _on_player_area_area_entered(area: Area2D) -> void:
 	if area.name == "bigHand" and !jumping or area.name == "littleHand" and !jumping:
 		#SPEED = 0
 		velocity=Vector2.ZERO
-		if position.x>-600:
+		if global_position.y > 0:
 			velocity.y += 1000
 		else:
 			velocity.y += -1000
 		slipping = true
-		$anim.play("slip")
+		if global_position.y < 0:
+			$anim.play("slip")
+		else:
+			$anim.play("fSlip")
 		$InventoryManager.destroyObj()
 		$slipTimer.start()
 		

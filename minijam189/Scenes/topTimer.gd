@@ -5,7 +5,7 @@ func addTime(amt):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.start()
-var t = 10.0
+var t = 70.0
 var alive = 0
 var ended = false
 func _on_timer_timeout() -> void:

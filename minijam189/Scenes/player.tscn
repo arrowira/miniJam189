@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://r10kfgnss2h0"]
+[gd_scene load_steps=15 format=3 uid="uid://r10kfgnss2h0"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_0yxif"]
 [ext_resource type="Texture2D" uid="uid://dyhcbt84hpiky" path="res://sprites/player-1.png (1).png" id="2_6x4l0"]
@@ -133,9 +133,37 @@ tracks/0/keys = {
 "values": [0.0, 0.326377, -0.326377, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_cv37l"]
+resource_name = "fSlip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.31864, 0.707106),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.420448, 61.82),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(-1, 152)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xbr2r"]
 _data = {
 "RESET": SubResource("Animation_1bbbk"),
+"fSlip": SubResource("Animation_cv37l"),
 "idle": SubResource("Animation_nwmyq"),
 "jump": SubResource("Animation_5l0sw"),
 "slip": SubResource("Animation_jt7xm"),

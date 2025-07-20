@@ -23,7 +23,6 @@ color = Color(0.536984, 0.755529, 1, 1)
 script = ExtResource("2_dutyb")
 
 [node name="Timer" type="Timer" parent="ColorRect"]
-wait_time = 1.4
 one_shot = true
 
 [connection signal="timeout" from="ColorRect/Timer" to="ColorRect" method="_on_timer_timeout"]

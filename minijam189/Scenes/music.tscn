@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://gohnnfa3qlyc"]
+[gd_scene load_steps=3 format=3 uid="uid://gohnnfa3qlyc"]
 
+[ext_resource type="Script" path="res://Scenes/music.gd" id="1_lx5c5"]
 [ext_resource type="AudioStream" uid="uid://dt30apnmd368d" path="res://WorkingAroundTheClockMusic.mp3" id="1_y6p3o"]
 
 [node name="Music" type="Node2D"]
+script = ExtResource("1_lx5c5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_y6p3o")
 volume_db = -8.693
 autoplay = true
 parameters/looping = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
