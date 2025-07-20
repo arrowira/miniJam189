@@ -84,36 +84,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_xftg3")
 
-[node name="deathScreenAnchor" type="Control" parent="CanvasLayer/DeathScreen"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 521.0
-offset_top = 1929.0
-offset_right = 561.0
-offset_bottom = 2868.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="Panel" type="TextureRect" parent="CanvasLayer/DeathScreen/deathScreenAnchor"]
+[node name="deathImg" type="TextureRect" parent="CanvasLayer/DeathScreen"]
 material = SubResource("CanvasItemMaterial_borpo")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -11.35
-anchor_top = -1.96699
+anchor_top = -1.9669
 anchor_right = -11.35
-anchor_bottom = -1.96699
-offset_right = 939.0
-offset_bottom = 2565.0
+anchor_bottom = 0.0330994
+offset_left = 561.0
+offset_top = 180.676
+offset_right = 1500.0
+offset_bottom = 2745.68
 texture = ExtResource("11_fep7c")
 expand_mode = 4
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/deathScreenAnchor/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/deathImg"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 238.0
@@ -124,7 +112,7 @@ theme_override_font_sizes/font_size = 100
 text = "YOU FAILED YOUR DEADLINE
 "
 
-[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/deathScreenAnchor/Panel"]
+[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/deathImg"]
 layout_mode = 0
 offset_left = 263.0
 offset_top = 321.0
@@ -134,7 +122,7 @@ theme_override_fonts/font = ExtResource("9_smo7h")
 theme_override_font_sizes/font_size = 100
 text = "RETRY"
 
-[node name="Label2" type="Label" parent="CanvasLayer/DeathScreen/deathScreenAnchor/Panel"]
+[node name="Label2" type="Label" parent="CanvasLayer/DeathScreen/deathImg"]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 24.0
@@ -144,5 +132,11 @@ theme_override_fonts/font = ExtResource("9_smo7h")
 theme_override_font_sizes/font_size = 50
 text = "You survived x seconds"
 
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/DeathScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+use_top_left = true
+
 [connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/DeathScreen/deathScreenAnchor/Panel/Button" to="CanvasLayer/DeathScreen" method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/DeathScreen/deathImg/Button" to="CanvasLayer/DeathScreen" method="_on_button_button_down"]

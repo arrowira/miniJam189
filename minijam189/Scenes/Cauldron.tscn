@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://ceou6ww1oulsy"]
+[gd_scene load_steps=16 format=3 uid="uid://ceou6ww1oulsy"]
 
 [ext_resource type="Texture2D" uid="uid://bclwgpdsc6s1m" path="res://sprites/large Shadow-1.png (1).png" id="1_ge2nr"]
 [ext_resource type="Script" path="res://Scripts/cauldron.gd" id="1_j0e8q"]
 [ext_resource type="Texture2D" uid="uid://cr6gbmelb0d2e" path="res://sprites/cauldron-1.png.png" id="1_rw2sa"]
 [ext_resource type="Script" path="res://Scripts/CauldronManager.gd" id="1_utyoj"]
+[ext_resource type="AudioStream" uid="uid://btqt7k4p485nn" path="res://water-splash-46402.mp3" id="5_5lglr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ksj4"]
 size = Vector2(636, 347.5)
@@ -100,6 +101,10 @@ texture = ExtResource("1_rw2sa")
 position = Vector2(-10, 100.5)
 shape = SubResource("RectangleShape2D_ing50")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cauldronArea"]
+stream = ExtResource("5_5lglr")
+volume_db = -13.117
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(0.441491, 0.654114, 0.801832, 1)
 position = Vector2(7, -151)
@@ -113,7 +118,6 @@ lifetime = 3.0
 modulate = Color(0.441491, 0.654114, 0.801832, 1)
 position = Vector2(4, -140)
 rotation = 3.13281
-scale = Vector2(1, 1)
 emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_nbiai")

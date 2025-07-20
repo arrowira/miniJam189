@@ -6,31 +6,32 @@ const JUMP_VELOCITY = -400.0
 var jumping = false
 var input_direction = Vector2.ZERO
 var slipping = false
+var ended = false
 func _physics_process(delta: float) -> void:
-	
-	z_index = (global_position.y/100)
-	if velocity.x<0:
-		$Sprite2D.flip_h = true
-	else:
-		$Sprite2D.flip_h = false
-	if !slipping:
-		velocity = input_direction * SPEED
-	else:
-		velocity *= 0.98
-	if !jumping and !slipping:
-		if velocity.length() > 0.1:
-			$anim.play("walk")
+	if !ended:
+		z_index = (global_position.y/100)
+		if velocity.x<0:
+			$Sprite2D.flip_h = true
 		else:
-			$anim.play("idle")
-	move_and_slide()
-	if Input.is_action_just_pressed("jump") and !jumping:
-		jumping = true
-		SPEED*=1.5
-		$anim.play("jump")
-		$jumpTimer.start()
-	else:
+			$Sprite2D.flip_h = false
+		if !slipping:
+			velocity = input_direction * SPEED
+		else:
+			velocity *= 0.98
 		if !jumping and !slipping:
-			input_direction = Input.get_vector("right","left", "up", "down")
+			if velocity.length() > 0.1:
+				$anim.play("walk")
+			else:
+				$anim.play("idle")
+		move_and_slide()
+		if Input.is_action_just_pressed("jump") and !jumping:
+			jumping = true
+			SPEED*=1.5
+			$anim.play("jump")
+			$jumpTimer.start()
+		else:
+			if !jumping and !slipping:
+				input_direction = Input.get_vector("right","left", "up", "down")
 	
 
 func _on_jump_timer_timeout() -> void:

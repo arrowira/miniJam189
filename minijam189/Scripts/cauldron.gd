@@ -16,4 +16,4 @@ func _on_body_entered(area):
 			$"../GPUParticles2D".modulate = area.get_node("InventoryManager").getColor()
 			get_node("/root/Node2D/Cauldron").Filled(get_node("/root/Node2D/player/Player/InventoryManager").ItemID)
 			area.get_node("InventoryManager").destroyObj()
-		
+			$AudioStreamPlayer.play()
