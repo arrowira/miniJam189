@@ -101,7 +101,6 @@ position = Vector2(-10, 100.5)
 shape = SubResource("RectangleShape2D_ing50")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
 modulate = Color(0.441491, 0.654114, 0.801832, 1)
 position = Vector2(7, -151)
 rotation = -1.57519
@@ -119,7 +118,7 @@ emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_nbiai")
 texture = SubResource("CanvasTexture_xnucd")
-lifetime = 3.0
+lifetime = 5.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.61
