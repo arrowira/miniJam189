@@ -15,6 +15,7 @@ var spawnID = 0
 
 func _on_spawn_timer_timeout() -> void:
 	#spawn
+	$spawnTimer.wait_time+=0.01
 	spawnID+=1
 	spawnID = spawnID % 5
 	var instance
