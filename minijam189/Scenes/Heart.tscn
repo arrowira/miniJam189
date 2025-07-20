@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3rpo24fr3qjk"]
+[gd_scene load_steps=5 format=3 uid="uid://3rpo24fr3qjk"]
 
 [ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="1_hh8bs"]
 [ext_resource type="Texture2D" uid="uid://8mjr3ycmfkoq" path="res://sprites/WashingMachineHeart.png" id="2_p4oa2"]
+[ext_resource type="Texture2D" uid="uid://bak8fjdrthvqj" path="res://sprites/small_shadow-1.png.png" id="2_svakw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
 size = Vector2(8, 8)
@@ -19,6 +20,12 @@ itemID = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Heart"]
 position = Vector2(0, 1.90735e-07)
 shape = SubResource("RectangleShape2D_s2j77")
+
+[node name="SmallShadow-1_png" type="Sprite2D" parent="Heart"]
+modulate = Color(1, 1, 1, 0.384314)
+position = Vector2(0.3, -6.3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_svakw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Heart"]
 texture_filter = 1

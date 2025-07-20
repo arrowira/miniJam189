@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://lelq6qmcrqnw"]
+[gd_scene load_steps=5 format=3 uid="uid://lelq6qmcrqnw"]
 
 [ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="1_g1ghu"]
 [ext_resource type="Texture2D" uid="uid://2dxpy2ro2uce" path="res://sprites/CandyCorn.png" id="2_aj8fx"]
+[ext_resource type="Texture2D" uid="uid://bak8fjdrthvqj" path="res://sprites/small_shadow-1.png.png" id="2_bx6wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
 size = Vector2(8, 8)
@@ -19,6 +20,12 @@ itemID = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Candy"]
 position = Vector2(0, 1.90735e-07)
 shape = SubResource("RectangleShape2D_s2j77")
+
+[node name="SmallShadow-1_png" type="Sprite2D" parent="Candy"]
+modulate = Color(1, 1, 1, 0.384314)
+position = Vector2(0.3, -6.3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_bx6wf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Candy"]
 texture_filter = 1

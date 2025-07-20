@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk1mm81gcqnrd"]
+[gd_scene load_steps=5 format=3 uid="uid://dk1mm81gcqnrd"]
 
 [ext_resource type="Script" path="res://Scripts/PickupObj.gd" id="1_83ekn"]
+[ext_resource type="Texture2D" uid="uid://bak8fjdrthvqj" path="res://sprites/small_shadow-1.png.png" id="2_30rj7"]
 [ext_resource type="Texture2D" uid="uid://chrwuaycutb6r" path="res://sprites/StrangeLump.png" id="2_c2yu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2j77"]
@@ -19,6 +20,12 @@ itemID = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lump"]
 position = Vector2(0, 1.90735e-07)
 shape = SubResource("RectangleShape2D_s2j77")
+
+[node name="SmallShadow-1_png" type="Sprite2D" parent="Lump"]
+modulate = Color(1, 1, 1, 0.384314)
+position = Vector2(0.3, -6.3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_30rj7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Lump"]
 texture_filter = 1
