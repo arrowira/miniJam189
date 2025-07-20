@@ -34,6 +34,7 @@ position = Vector2(1, -531)
 shape = SubResource("RectangleShape2D_y78oi")
 
 [node name="bigHand" type="Node2D" parent="."]
+z_index = -80
 script = ExtResource("3_0b6dg")
 handSpeed = 0.75
 
@@ -46,3 +47,8 @@ texture = ExtResource("4_whh6e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bigHand/bigHand"]
 position = Vector2(0.5, -788)
 shape = SubResource("RectangleShape2D_ctcm2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-28, -1781, -835, -1556, -1413, -1067, -1750, -254, -1667, 552, -1243, 1222, -633, 1628, 45, 1747, 791, 1561, 1342, 1120, 1672, 510, 1749, -41, 1613, -685, 1291, -1236, 698, -1618, 73, -1772, 123, -2578, 2649, -2578, 2567, 2164, -2373, 2354, -2487, -2637, -37, -2611)

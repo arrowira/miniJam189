@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 					instance = lump.instantiate()
 					
 				4:
-					instance = candy.insantiate()
+					instance = candy.instantiate()
 					
 				5:
 					instance = voidE.instantiate()

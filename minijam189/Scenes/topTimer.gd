@@ -6,10 +6,14 @@ func addTime(amt):
 func _ready() -> void:
 	$Timer.start()
 var t = 50.0
+var alive = 0
 
 func _on_timer_timeout() -> void:
 	t-=1
+	
 	if t <= -1:
 		$DeathScreen.visible = true
+		$DeathScreen/deathScreenAnchor/Panel/Label2.text = "You survivied " + str(alive) + " seconds"
 	else:
 		$Panel/Label.text = str(int(t))
+		alive += 1

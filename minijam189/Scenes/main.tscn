@@ -134,5 +134,15 @@ theme_override_fonts/font = ExtResource("9_smo7h")
 theme_override_font_sizes/font_size = 100
 text = "RETRY"
 
+[node name="Label2" type="Label" parent="CanvasLayer/DeathScreen/deathScreenAnchor/Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 24.0
+offset_right = 362.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource("9_smo7h")
+theme_override_font_sizes/font_size = 50
+text = "You survived x seconds"
+
 [connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/DeathScreen/deathScreenAnchor/Panel/Button" to="CanvasLayer/DeathScreen" method="_on_button_button_down"]
