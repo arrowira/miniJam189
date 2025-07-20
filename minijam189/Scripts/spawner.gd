@@ -5,6 +5,7 @@ static var heart :=  preload("res://Scenes/Heart.tscn")
 static var voidE := preload("res://Scenes/VoidEssence.tscn")
 static var lump := preload("res://Scenes/StrangeLump.tscn")
 static var eye := preload("res://Scenes/Eyeball.tscn")
+static var beam := preload("res://Scenes/spawn_beam.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$spawnTimer.start()
@@ -17,6 +18,7 @@ func _on_spawn_timer_timeout() -> void:
 	spawnID+=1
 	spawnID = spawnID % 5
 	var instance
+	var beamInstance = beam.instantiate()
 	match spawnID:
 		0:
 			instance = eye.instantiate()
@@ -30,7 +32,10 @@ func _on_spawn_timer_timeout() -> void:
 			instance = candy.instantiate()
 	var angle = randf_range(0,360)
 	var hyp = randf_range(300,1700)
+	
 	instance.position = Vector2(sin(deg_to_rad(angle))*hyp,cos(deg_to_rad(angle))*hyp)
+	beamInstance.position = instance.position
 	#print(instance.position)
 	get_parent().add_child(instance)
+	get_parent().add_child(beamInstance)
 	

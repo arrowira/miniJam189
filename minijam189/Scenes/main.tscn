@@ -77,6 +77,7 @@ horizontal_alignment = 1
 wait_time = 0.6
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -98,7 +99,6 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Panel" type="TextureRect" parent="CanvasLayer/DeathScreen/deathScreenAnchor"]
-visible = false
 material = SubResource("CanvasItemMaterial_borpo")
 layout_mode = 1
 anchors_preset = -1
